@@ -18,8 +18,6 @@ public class SpringApp
 
         System.out.println(message);
 
-
-
         Employee myProgrammer = new Programmer();
         System.out.println(myProgrammer.getDescription());
 

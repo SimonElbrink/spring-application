@@ -2,20 +2,19 @@ package se.lexicon;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import se.lexicon.model.Employee;
-import se.lexicon.model.Programmer;
-import se.lexicon.service.RandomSalaryService;
 
-public class SpringApp
-{
-    public static void main( String[] args )
-    {
- ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+import se.lexicon.model.Employee;
+
+
+public class SpringApp {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmployeeConfig.class);
 
         Employee programmer = context.getBean("programmer", Employee.class);
 
-       String message = "Programmers description: " + programmer.getDescription();
+        Employee salesPerson = context.getBean("salesPerson", Employee.class);
+
+        String message = "Programmers description: " + programmer.getDescription();
 
         System.out.println(message);
 
@@ -25,6 +24,8 @@ public class SpringApp
         int salary = programmer.getSalary();
 
         System.out.println(salary);
+
+        System.out.println("salesPerson Salary = " + salesPerson.getSalary());
 
     }
 }

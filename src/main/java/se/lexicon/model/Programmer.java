@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.lexicon.service.SalaryService;
 
-@Component
+
 public class Programmer implements Employee{
 
     SalaryService salaryService;
@@ -12,7 +12,6 @@ public class Programmer implements Employee{
     public Programmer() {
     }
 
-    @Autowired
     public void setSalaryService(SalaryService salaryService) {
         this.salaryService = salaryService;
     }

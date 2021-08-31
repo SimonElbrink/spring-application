@@ -7,19 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Define your beans here -->
-
-    <bean id="RandomSalaryService" class="se.lexicon.service.RandomSalaryService"/>
-
-    <!-- Setter Injection-->
-    <bean id="programmer" class="se.lexicon.model.Programmer">
-        <property name="salaryService" ref="RandomSalaryService"/>
-    </bean>
-
-    <!-- Constructor Injection-->
-    <bean id="salesPerson" class="se.lexicon.model.SalesPerson">
-        <constructor-arg ref="RandomSalaryService"/>
-    </bean>
+    <context:component-scan base-package="se.lexicon"/>
 
     
 </beans>
